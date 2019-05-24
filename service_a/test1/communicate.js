@@ -1,5 +1,5 @@
 var http = require('http');
-const testId = "http://service-b-svc-http-listener";
+const testId = "http://service_a_envoy";
 var communications = {
     test2,
     test3
@@ -7,7 +7,7 @@ var communications = {
 function test2() {
 
     var options = {
-        host: testId,
+        host: "http://0.0.0.0",
         port: 8788,
         path: '/test2',
         method: 'GET'
