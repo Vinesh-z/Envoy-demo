@@ -6,6 +6,7 @@ var helloTest={
 }
 
 function sayHello(req,res){
+    console.log("hi praveen");
     res.send("Hello from test2");
 }
 
