@@ -18,7 +18,7 @@ function test2() {
         request
   .get(testId+':'+options.port+options.path)
   .on('response', function(err,response,body) {
-    console.log(response.statusCode) // 200
+    
     console.log(response);
     
     resolve(body)
