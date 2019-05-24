@@ -24,20 +24,6 @@ function test2() {
             else
             resolve(body);
           });
-        
-  
-        // var httpreq = http.request(options, function (response) {
-        //     console.log(response+"  Resp of serv2");
-        //     response.setEncoding('utf8');
-        //     var resp;
-        //     response.on('data', function (chunk) {
-        //         resp = (chunk);
-        //     });
-        //     response.on('end', function () {
-        //         resolve(resp);
-        //     })
-        // });
-        // httpreq.end();
     });
 }
 
@@ -51,17 +37,15 @@ function test3() {
     };
 
     return new Promise((resolve, reject) => {
-        var httpreq = http.request(options, function (response) {
-            response.setEncoding('utf8');
-            var resp;
-            response.on('data', function (chunk) {
-                resp = (chunk);
-            });
-            response.on('end', function () {
-                resolve(resp);
-            })
-        });
-        httpreq.end();
+        request(testId+':'+options.port+options.path, function (error, response, body) {
+            console.log('error:', error); // Print the error if one occurred
+            console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+            console.log('body:', body); // Print the HTML for the Google homepage.
+            if(error)
+            reject(error);
+            else
+            resolve(body);
+          });
     });
 }
 
