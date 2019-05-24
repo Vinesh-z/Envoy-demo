@@ -15,6 +15,7 @@ function test2() {
 
     return new Promise((resolve, reject) => {
         var httpreq = http.request(options, function (response) {
+            console.log(response+"  Resp of serv2");
             response.setEncoding('utf8');
             var resp;
             response.on('data', function (chunk) {
