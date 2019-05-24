@@ -17,9 +17,11 @@ function test2() {
     return new Promise((resolve, reject) => {
         request
   .get(testId+':'+options.port+options.path)
-  .on('response', function(response) {
+  .on('response', function(err,response,body) {
     console.log(response.statusCode) // 200
-    resolve(response.body)
+    console.log(response);
+    
+    resolve(body)
   })
   .on('error', function(err) {
     console.log(err)
