@@ -7,7 +7,7 @@ var communications = {
 function test2() {
 
     var options = {
-        host: "http://0.0.0.0",
+        // host: "http://0.0.0.0",
         port: 8788,
         path: '/test2',
         method: 'GET'
