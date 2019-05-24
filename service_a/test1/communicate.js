@@ -15,18 +15,17 @@ function test2() {
     };
 
     return new Promise((resolve, reject) => {
-        request
-  .get(testId+':'+options.port+options.path)
-  .on('response', function(err,response,body) {
-    
-    console.log(response);
-    
-    resolve(body)
-  })
-  .on('error', function(err) {
-    console.log(err)
-    reject(err)
-  })
+        request(testId+':'+options.port+options.path, function (error, response, body) {
+            console.log('error:', error); // Print the error if one occurred
+            console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+            console.log('body:', body); // Print the HTML for the Google homepage.
+            if(error)
+            reject(error);
+            else
+            resolve(body);
+          });
+        
+  
         // var httpreq = http.request(options, function (response) {
         //     console.log(response+"  Resp of serv2");
         //     response.setEncoding('utf8');
