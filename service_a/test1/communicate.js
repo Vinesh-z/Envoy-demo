@@ -1,5 +1,5 @@
 var http = require('http');
-const testId = "http://service_a_envoy";
+const testId = "http://service-b-svc-http-listener";
 var communications = {
     test2,
     test3
