@@ -8,7 +8,7 @@ function test2() {
 
     var options = {
         host: testId,
-        port: 3002,
+        port: 8788,
         path: '/test2',
         method: 'GET'
     };
@@ -32,7 +32,7 @@ function test3() {
 
     var options = {
         host: testId,
-        port: 3003,
+        port: 8791,
         path: '/test3',
         method: 'GET'
     };
